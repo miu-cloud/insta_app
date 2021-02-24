@@ -12,15 +12,19 @@ class FeedsController < ApplicationController
     @feed = Feed.new
   end
 
+  def confirm
+    @feed = Feed.new(feed_params)
+  end
+  
   def edit
   end
-
+  
   def create
     @feed = Feed.new(feed_params)
 
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: "Feed was successfully created." }
+        format.html { redirect_to feeds_path, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new, status: :unprocessable_entity }

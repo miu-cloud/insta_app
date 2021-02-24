@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      feed: 
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+      feed:
+        image: 画像
+        text: テキスト
+        
