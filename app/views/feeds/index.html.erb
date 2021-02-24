@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Text</th>
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
+        <th><%= feed.text%></th>
         <td><%= feed.image %></td>
         <td><%= link_to 'Show', feed %></td>
         <td><%= link_to 'Edit', edit_feed_path(feed) %></td>

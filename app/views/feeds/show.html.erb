@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Text:</strong>
+  <%= @feed.text%>
   <strong>Image:</strong>
   <%= image_tag @feed.image.url %>
+
 </p>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
