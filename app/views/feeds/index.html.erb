@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Feeds</h1>
 
 <table>
@@ -15,9 +13,9 @@
     <% @feeds.each do |feed| %>
       <tr>
         <th><%= feed.text%></th>
-        <td><%= feed.image %></td>
+        <td><%= image_tag feed.image.url %></td>
         <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
+        <td><%= link_to 'Edit', edit_feed_path(feed.id) %></td>
         <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

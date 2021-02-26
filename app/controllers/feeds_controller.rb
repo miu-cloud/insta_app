@@ -20,7 +20,7 @@ class FeedsController < ApplicationController
   end
   
   def create
-    @feed = Feed.new(feed_params)
+    @feed = current_user.feeds.build(feed_params)
 
     respond_to do |format|
       if @feed.save

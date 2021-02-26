@@ -2,6 +2,7 @@
 <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
   <strong>Text:</strong>
   <%= @feed.text%>  
+  <%= form.hidden_field :text %>
   <strong>Image:</strong>
   <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
   <%= form.hidden_field :image_cache %>
