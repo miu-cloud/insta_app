@@ -1,10 +1,78 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px;
+  color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+}
+header{
+  text-align: center;
+  background-color: #2C7CFF;
+  color:white;
+}
+.header-logo{
+  background-color: #2C7CFF;
+  font-size: 18px;
+}
+h1{
+  text-align: center;
+  padding-top: 50px;
+}
+.login,.signup{
+  height:370px;
+  text-align: center;
+  line-height:60px;
+  margin-top: 50px;
+  margin-bottom: 120px;
+}
+.after-login{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 200px;
+  margin-bottom: 305px;
+}
+.new-posting{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  line-height:60px;
+}
+.posting-check{
+  text-align: center;
+  font-size: 22px;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  line-height:60px;
+}
+.table{
+  padding-left: 300px;
+  padding-top: 20px;
+}
+.dateil-top,.dateil-bottom{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 108px;
+  line-height:100px;
+}
+.editing{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+  line-height:50px;
+}
+.btn-center{
+  text-align: center;
+}
+footer{
+  text-align: center;
+  background-color: #2C7CFF;
+  color:white;
+  padding-bottom: 20px;
 }
 
 p, ol, ul, td {
@@ -23,12 +91,12 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: black;
   }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color:#75A9FF;
   }
 }
 

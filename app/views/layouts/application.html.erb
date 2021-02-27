@@ -5,22 +5,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-     <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-      <%= link_to "投稿する", new_feed_path %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+    <header>
+      <h1>FaceBook</h1>
+    </header>
+    <div class= "header-logo">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "#{key}") %>
+          <% end %>
+          <% if logged_in? %>
+            <%= link_to "Profile", user_path(current_user.id) %>
+            <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+            <%= link_to "投稿する", new_feed_path %>
+          <% else %>
+            <%= link_to "Sign up", new_user_path %>
+            <%= link_to "Login", new_session_path %>
+          <% end %>
+     </div>
     <%= yield %>
+    
+    <footer>
+      <h1>@2021 DIVE INTO CODE</h1>
+    </footer>
+
   </body>
 </html>

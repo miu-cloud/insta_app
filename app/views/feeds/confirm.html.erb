@@ -1,14 +1,16 @@
 <h1>投稿確認画面</h1>
-<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
-  <strong>Text:</strong>
-  <%= @feed.text%>  
-  <%= form.hidden_field :text %>
-  <strong>Image:</strong>
-  <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "投稿する" %>
-<% end %>
-<%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: "back" %>
-<% end %>
+<div class = "posting-check">
+  <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+    <strong>Text:</strong>
+    <%= @feed.text%>
+    <%= form.hidden_field :text %>
+    <p><strong>Image:</strong>
+    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+    <%= form.hidden_field :image_cache %></p>  
+    <%= form.submit "投稿する" %>
+  <% end %>
+  <%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.submit "戻る", name: "back" %>
+  <% end %>
+</div>

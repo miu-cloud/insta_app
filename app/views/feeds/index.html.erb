@@ -1,27 +1,30 @@
-<h1>Feeds</h1>
+<h1>投稿一覧ページ</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @feeds.each do |feed| %>
+<div class = "table">
+  <table border="5" rules="rows">
+    <thead>
       <tr>
-        <th><%= feed.text%></th>
-        <td><%= image_tag feed.image.url %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed.id) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Text</th>
+        <th>Image</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @feeds.each do |feed| %>
+        <tr>
+          <th><%= feed.user.name%></th>
+          <th><%= feed.text%></th>
+          <td><%= image_tag feed.image.url %></td>
+          <td><%= link_to '詳細', feed %></td>
+          <td><%= link_to '編集', edit_feed_path(feed.id) %></td>
+          <td><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Feed', new_feed_path %>

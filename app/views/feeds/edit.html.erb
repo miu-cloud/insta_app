@@ -1,6 +1,10 @@
-<h1>Editing Feed</h1>
+<h1>編集する</h1>
 
-<%= render 'form', feed: @feed %>
+<div class = "editing">
+    <%= render 'form', feed: @feed %>
+</div>
 
-<%= link_to 'Show', @feed %> |
-<%= link_to 'Back', feeds_path %>
+<div class = "btn-center">
+    <%= link_to 'Show', @feed %> |
+    <%= link_to 'Back', feeds_path %>
+</div>
