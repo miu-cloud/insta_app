@@ -4,7 +4,6 @@
     <title>FcApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -26,11 +25,11 @@
             <%= link_to "Login", new_session_path %>
           <% end %>
      </div>
+
     <%= yield %>
     
     <footer>
       <h1>@2021 DIVE INTO CODE</h1>
     </footer>
-
   </body>
 </html>
