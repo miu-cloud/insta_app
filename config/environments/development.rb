@@ -3,7 +3,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.eager_load = false
-# 以下、後からtrueに変更しておくこと
+
   config.consider_all_requests_local = true
 
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
@@ -36,4 +36,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :letter_opener_web
 end

@@ -20,10 +20,11 @@ class FeedsController < ApplicationController
   end
   
   def create
-    @feed = current_user.feeds.build(feed_params)
+    @feed = current_user.feeds.build(feed_params)    
 
     respond_to do |format|
       if @feed.save
+        ContactMailer.contact_mail(@feed).deliver
         format.html { redirect_to feeds_path, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else
