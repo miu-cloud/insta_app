@@ -2,10 +2,13 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+  background-image: image-url('instgram.jpg');
+  background-size: cover;
 }
 header{
   text-align: center;
