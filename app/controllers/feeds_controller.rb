@@ -21,8 +21,6 @@ class FeedsController < ApplicationController
   
   def create
     @feed = current_user.feeds.build(feed_params)   
-    redirect_to show_path 
-
     respond_to do |format|
       if @feed.save
         ContactMailer.contact_mail(@feed).deliver

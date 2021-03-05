@@ -1,4 +1,25 @@
-<div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class = "signup">
+  <%= form_with(model: @user, local: true) do |f| %>  
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>  
+    <p><%= f.submit "編集" %></p>
+  <% end %>
 </div>
