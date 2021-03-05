@@ -20,7 +20,8 @@ class FeedsController < ApplicationController
   end
   
   def create
-    @feed = current_user.feeds.build(feed_params)    
+    @feed = current_user.feeds.build(feed_params)   
+    redirect_to show_path 
 
     respond_to do |format|
       if @feed.save

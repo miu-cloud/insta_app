@@ -1,21 +1,15 @@
 <h1><%= @user.name %>のページ</h1>
 <p class = "after-login">メールアドレス: <%= @user.email %></p>
 <p>
-    <%
-=begin%>
- <div class="field">
-        <%= form.label :image %>
-        <%= form.file_field :image %>
-    </div> 
-<%
-=end%>
-<p>
-  <strong>Image:</strong>
-  <%
-=begin%>
- <%= image_tag @user.image.url %> 
-<%
-=end%>
-</p>
 
-</p>
+<%= form_with(model: @feed, url: feeds_path,local: true) do |form| %>
+  <div class="field">
+        <%= form.label :プロフィール画像 %>
+        <%= form.file_field :image %>
+        
+        <%= form.hidden_field :image_cache %></p>  
+        <%= form.submit "変更する" %>
+  </div> 
+<%end%>
+
+
