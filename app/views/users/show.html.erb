@@ -1,8 +1,10 @@
 <h1>プロフィール</h1>
 <h1><%= @user.name %>のページ</h1>
 <p class = "after-login">メールアドレス: <%= @user.email %></p>
-<h1>プロフィール画像<%=image_tag @user.image.url %></h1>
-<%= link_to 'プロフィールを編集する', edit_user_path(@user) %> 
-
+<div class = "profile">
+<p>プロフィール画像</p>
+<%=image_tag @user.image.url %>
+<p><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></p> 
+</div>
 
 

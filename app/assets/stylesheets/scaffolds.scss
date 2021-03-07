@@ -32,9 +32,9 @@ h1{
 }
 .after-login{
   text-align: center;
-  font-size: 30px;
-  margin-top: 200px;
-  margin-bottom: 305px;
+  font-size: 18px;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 .new-posting{
   text-align: center;
@@ -51,15 +51,21 @@ h1{
   line-height:60px;
 }
 .table{
-  padding-left: 300px;
+  padding-left: 450px;
   padding-top: 20px;
 }
+
 .dateil-top,.dateil-bottom{
   text-align: center;
   font-size: 30px;
   margin-top: 40px;
   margin-bottom: 108px;
   line-height:100px;
+}
+.profile-editing{
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 130px;
 }
 .editing{
   text-align: center;
@@ -70,6 +76,10 @@ h1{
 }
 .btn-center{
   text-align: center;
+}
+.profile{
+  text-align: center;
+  padding-bottom: 40px;
 }
 footer{
   text-align: center;

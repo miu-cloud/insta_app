@@ -1,20 +1,22 @@
 <h1>お気に入り一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>投稿者</th>
-      <th>画像</th>
-      <th>投稿内容</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @favorites.each do |favorite| %>
+<div class = table>
+  <table>
+    <thead>
       <tr>
-        <td><%= favorite.feed.user.name %></td>
-        <td><%= image_tag favorite.feed.image.url %></td>
-        <td><%= favorite.feed.text %></td>
+        <th>投稿者</th>
+        <th>画像</th>
+        <th>投稿内容</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @favorites.each do |favorite| %>
+        <tr>
+          <td><%= favorite.feed.user.name %></td>
+          <td><%= image_tag favorite.feed.image.url %></td>
+          <td><%= favorite.feed.text %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
