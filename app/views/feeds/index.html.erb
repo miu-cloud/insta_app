@@ -18,8 +18,10 @@
           <th><%= feed.text%></th>
           <td><%= image_tag feed.image.url %></td>
           <td><%= link_to '詳細', feed %></td>
-          <td><%= link_to '編集', edit_feed_path(feed.id) %></td>
-          <td><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+          <% if current_user.id == feed.user_id %>
+            <td><%= link_to '編集', edit_feed_path(feed.id) %></td>
+            <td><%= link_to '削除', feed, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+          <% end %>
        </tr>
       <% end %>
     </tbody>

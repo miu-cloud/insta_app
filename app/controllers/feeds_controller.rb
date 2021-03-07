@@ -1,5 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: %i[ show edit update destroy ]
+  before_action :block_other_user, only: [:edit, :update, :destroy]
 
   def index
     @feeds = Feed.all
@@ -60,5 +61,10 @@ class FeedsController < ApplicationController
     end
     def feed_params
       params.require(:feed).permit(:image, :image_cache, :text)
+    end
+    def block_other_user
+      if current_user.id != @feed.user_id
+        redirect_to feeds_path, notice:"投稿者ではありません"
+      end
     end
 end
