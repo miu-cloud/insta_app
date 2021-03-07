@@ -23,10 +23,17 @@ h1{
   text-align: center;
   padding-top: 50px;
 }
-.login,.signup{
+.login{
   height:370px;
   text-align: center;
   line-height:60px;
+  margin-top: 50px;
+  margin-bottom: 120px;
+}
+.signup{
+  height:370px;
+  text-align: center;
+  line-height:45px;
   margin-top: 50px;
   margin-bottom: 120px;
 }
