@@ -56,15 +56,15 @@ class FeedsController < ApplicationController
   end
 
   private
-    def set_feed
-      @feed = Feed.find(params[:id])
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
+  def feed_params
+    params.require(:feed).permit(:image, :image_cache, :text)
+  end
+  def block_other_user
+    if current_user.id != @feed.user_id
+      redirect_to feeds_path, notice:"投稿者ではありません"
     end
-    def feed_params
-      params.require(:feed).permit(:image, :image_cache, :text)
-    end
-    def block_other_user
-      if current_user.id != @feed.user_id
-        redirect_to feeds_path, notice:"投稿者ではありません"
-      end
-    end
+  end
 end
