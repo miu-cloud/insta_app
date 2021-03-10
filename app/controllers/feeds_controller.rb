@@ -1,4 +1,5 @@
 class FeedsController < ApplicationController
+  before_action :logged_in?, only:[:new,:create]
   before_action :set_feed, only: %i[ show edit update destroy ]
   before_action :block_other_user, only: [:edit, :update, :destroy]
 
@@ -25,7 +26,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)   
     respond_to do |format|
       if @feed.save
-        # ContactMailer.contact_mail(@feed).deliver
+        ContactMailer.contact_mail(@feed).deliver
         format.html { redirect_to feeds_path, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else

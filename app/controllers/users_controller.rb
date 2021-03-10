@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only:[:new,:create]
+  skip_before_action :login_required, only: [:new, :create]
+
     def new
         @user = User.new
     end
@@ -32,4 +36,9 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
     end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
+  
 end
